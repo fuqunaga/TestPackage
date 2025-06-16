@@ -1,0 +1,15 @@
+{
+  "name": "ga.fuquna.testpackage",
+  "version": "0.0.0",
+  "displayName": "Test Package",
+  "description": "This is an package for testing purposes.",
+  "unity": "6000.1",
+ "keywords": [
+    "keyword1"
+  ],
+  "author": {
+    "name": "fuqunaga",
+    "email": "fukhid@gmail.com",
+    "url": "https://fuquna.ga"
+  }
+}
