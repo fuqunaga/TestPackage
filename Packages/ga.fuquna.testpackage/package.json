@@ -1,10 +1,10 @@
 {
   "name": "ga.fuquna.testpackage",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "displayName": "Test Package",
   "description": "This is an package for testing purposes.",
   "unity": "6000.1",
- "keywords": [
+  "keywords": [
     "keyword1"
   ],
   "author": {
