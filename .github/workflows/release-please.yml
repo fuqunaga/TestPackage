@@ -27,5 +27,5 @@ jobs:
 
       - uses: googleapis/release-please-action@v4
         with:
+          path: Packages/ga.fuquna.testpackage/
           release-type: node
-          path: 'Packages/ga.fuquna.testpackage'
