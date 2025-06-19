@@ -13,20 +13,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository # このステップは非常に重要です
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # 全てのコミット履歴が必要
-          
-      - name: Debug List contents of package directory
-        run: |
-          echo "Listing contents of Packages/ga.fuquna.testpackage/"
-          ls -al Packages/ga.fuquna.testpackage/
-          echo "Checking for specific file: Packages/ga.fuquna.testpackage/package.json"
-          test -f Packages/ga.fuquna.testpackage/package.json && echo "package.json found!" || echo "package.json NOT found!"
-
       - uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           path: Packages/ga.fuquna.testpackage/
-          release-type: node
