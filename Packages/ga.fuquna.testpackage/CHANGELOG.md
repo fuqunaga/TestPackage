@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.0](https://github.com/fuqunaga/TestPackage/compare/ga.fuquna.testpackage-v1.0.1...ga.fuquna.testpackage-v0.0.0) (2025-06-20)
+
+
+### Miscellaneous Chores
+
+* release 0.0.0 ([a07a765](https://github.com/fuqunaga/TestPackage/commit/a07a765454177f854630d68ce52fe8e6a4fbd23c))
+
 ## [1.0.1](https://github.com/fuqunaga/TestPackage/compare/ga.fuquna.testpackage-v1.0.0...ga.fuquna.testpackage-v1.0.1) (2025-06-20)
 
 
