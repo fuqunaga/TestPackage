@@ -13,6 +13,10 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      # releases_created と paths_released を後続のジョブから参照できるようにする
+      releases_created: ${{ steps.release.outputs.releases_created }}
+      paths_released: ${{ steps.release.outputs.paths_released }}
     steps:
       - uses: googleapis/release-please-action@v4
       
@@ -21,7 +25,7 @@ jobs:
     needs: release-please # release-pleaseジョブが完了してから実行
     runs-on: ubuntu-latest
     # release-pleaseジョブでリリースが作成された場合にのみ実行
-    if: ${{ needs.release-please.outputs.releases_json != '{}' }}
+    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
