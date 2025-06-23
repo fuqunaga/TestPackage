@@ -41,7 +41,7 @@ jobs:
         run: |
           # paths_released をパースして、リリースされたパッケージをループ処理
           # JSON文字列をシェル配列に変換するためにjqを使用
-          PACKAGES_TO_PUBLISH=$(echo "${{ needs.release-please.outputs.paths_released }}" | jq -r '.[]')
+          PACKAGES_TO_PUBLISH=$(echo '${{ needs.release-please.outputs.paths_released }}' | jq -r '.[]')
 
           if [ -z "$PACKAGES_TO_PUBLISH" ]; then
             echo "No packages were released, skipping npm publish."
