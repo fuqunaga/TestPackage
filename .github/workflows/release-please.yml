@@ -15,3 +15,39 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
+      
+  # リリースされたパッケージをnpm publishするジョブ
+  publish:
+    needs: release-please # release-pleaseジョブが完了してから実行
+    runs-on: ubuntu-latest
+    # release-pleaseジョブでリリースが作成された場合にのみ実行
+    if: ${{ needs.release-please.outputs.releases_json != '{}' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+
+      # `release-please`の出力からリリースされたパッケージを特定し、npm publishを実行
+      - name: Publish to npm
+        #env:
+        #  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # npmトークンをGitHub Secretsに保存
+        run: |
+          # paths_released をパースして、リリースされたパッケージをループ処理
+          # JSON文字列をシェル配列に変換するためにjqを使用
+          PACKAGES_TO_PUBLISH=$(echo "${{ needs.release-please.outputs.paths_released }}" | jq -r '.[]')
+
+          if [ -z "$PACKAGES_TO_PUBLISH" ]; then
+            echo "No packages were released, skipping npm publish."
+            exit 0
+          fi
+
+          echo "Packages to publish: $PACKAGES_TO_PUBLISH"
+
+          for package_path in $PACKAGES_TO_PUBLISH; do
+            echo "Publishing $package_path..."
+            cd "$package_path"
+            npm publish --dry-run
+            cd - # 元のディレクトリに戻る
+          done
