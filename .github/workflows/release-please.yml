@@ -19,6 +19,7 @@ jobs:
       paths_released: ${{ steps.release.outputs.paths_released }}
     steps:
       - uses: googleapis/release-please-action@v4
+        id: release
       
   # リリースされたパッケージをnpm publishするジョブ
   publish:
