@@ -1,6 +1,6 @@
 {
   "name": "ga.fuquna.testpackage",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "displayName": "Test Package",
   "description": "This is an package for testing purposes.",
   "unity": "6000.1",
