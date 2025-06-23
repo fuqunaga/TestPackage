@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/fuqunaga/TestPackage/compare/ga.fuquna.testpackage-v0.1.4...ga.fuquna.testpackage-v0.1.5) (2025-06-23)
+
+
+### Bug Fixes
+
+* test ([ff95c32](https://github.com/fuqunaga/TestPackage/commit/ff95c329df1c537b2bf8773aaaeb4b5ee3d127d9))
+
 ## [0.1.4](https://github.com/fuqunaga/TestPackage/compare/ga.fuquna.testpackage-v0.1.3...ga.fuquna.testpackage-v0.1.4) (2025-06-23)
 
 
