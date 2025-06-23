@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/fuqunaga/TestPackage/compare/ga.fuquna.testpackage-v0.1.1...ga.fuquna.testpackage-v0.1.2) (2025-06-23)
+
+
+### Bug Fixes
+
+* add metafile ([95502e8](https://github.com/fuqunaga/TestPackage/commit/95502e840ac76b42efb65995f3ea359d886a1511))
+
 ## [0.1.1](https://github.com/fuqunaga/TestPackage/compare/ga.fuquna.testpackage-v0.1.0...ga.fuquna.testpackage-v0.1.1) (2025-06-23)
 
 
